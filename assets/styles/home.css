@@ -1,0 +1,275 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ========== HOME CONTAINER ========== */
+.home {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url("../../assets/images/home.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 1, 37, 0.45);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e5ff00ff;
+  position: relative;
+  z-index: 10;
+  animation: slideDown 0.8s ease-out;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  gap: 2px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 30px;
+  border: 3px solid #fffb08ff;
+  object-fit: cover;
+  transition: 0.3s;
+  box-shadow: 2px 2px 3px 2px rgba(255, 230, 3, 0.86);
+  animation: bounceIn 1s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  border: 3px solid #000661ff;
+  box-shadow: 2px 2px 2px 2px rgba(221, 221, 221, 0.86);
+}
+
+.name {
+  margin-left: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffd901ff; 
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.88);
+  animation: fadeInLeft 1s ease-in-out 0.2s forwards;
+  opacity: 0;
+}
+
+.name:hover {
+  margin-left: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #f1f1f1ff; 
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px rgba(231, 216, 4, 0.88);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-right: 10px;
+}
+
+.navbar-right a {
+  color: #fde403ff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: fadeInRight 1s ease-in-out 0.4s forwards;
+  opacity: 0;
+}
+
+.navbar-right a:hover {
+  color: #e9e8e4ff;
+  transform: scale(1.1);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.88);
+}
+
+.profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3px solid #daf10bff;
+  cursor: pointer;
+  transition: 0.3s;
+  object-fit: cover;
+  animation: rotateIn 1s ease-in-out;
+}
+
+.profile:hover {
+  transform: scale(1.1);
+  border: 3px solid #21a101ff;
+}
+
+.footer {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  max-width: 90%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.button {
+  padding: 12px 34px;
+  font-size: 18px;
+  background: linear-gradient(140deg, #4ad414ff, #f8e321ff, #00aaff);
+  color: #000;
+  border-radius: 35px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  transition: 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 40px;
+  background: linear-gradient(140deg, #4ad414ff, #f8e321ff, #00aaff);
+  z-index: -1;
+}
+
+.button:hover {
+  background: #40eb0cff;
+  transform: scale(1.08);
+}
+
+
+
+.footer h6 {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #cccccc;
+  animation: fadeIn 1s ease-in-out 1s forwards;
+  opacity: 0;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeInLeft {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes rotateIn {
+  from { transform: rotate(-180deg); opacity: 0; }
+  to { transform: rotate(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .navbar-right {
+    gap: 15px;
+    margin-right: 5px;
+  }
+
+  .navbar-right a {
+    font-size: 16px;
+  }
+
+  .navbar-left {
+    margin-left: 5px;
+  }
+
+  .name {
+    font-size: 22px;
+  }
+
+  .logo,
+  .profile {
+    width: 38px;
+    height: 38px;
+  }
+
+  .button {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+
+  .footer {
+    bottom: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-right a {
+    font-size: 14px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .navbar-right {
+    gap: 10px;
+  }
+}
